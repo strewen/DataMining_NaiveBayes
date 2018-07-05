@@ -109,7 +109,7 @@ class NaiveBayes:
             class_probility=[class_mem/sum(class_probility) for class_mem in class_probility]
 
             for i in range(len(sample)):
-                #存放各标签某个特征的先验概率[P(class1|特征1),P(class2|特征1)....]
+                #存放各标签某个特征的先验概率[P(特征1|class1),P(特征2|class2)....]
                 probility=[]
                 for j in range(len(self.labels)):
                     probility.append(self.gauss(self.mean.iloc[j,i],self.var.iloc[j,i],sample[i]))
